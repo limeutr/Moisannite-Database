@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffd1dc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #ff69b4;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .header {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ff69b4 0%, #ffb6c1 100%);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+            overflow: hidden;
+            color: white;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: scale-down;
+            border-radius: 8px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/">.˚｡୨୧⋆Moissanite⋆୨୧˚.</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <img src="/images/<%= image.filename %>" alt="<%= image.description %>">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= image.description %>
+                </h5><h5 class="card-title"><%= image.name %></h5> 
+                <a href="/download/<%= image.filename %>" class="btn">Download</a>
+                <a href="/updateImage/<%= image.id %>" class="btn">Update</a>
+                <a href="/delete/<%= image.id %>" class="btn"
+                    onclick="return confirm('Are you sure you want to delete this image?')">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
